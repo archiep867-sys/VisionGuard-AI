@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: visionguard-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Set AWS_REGION and S3_BUCKET in Render dashboard if enabling S3.
+      # Never commit AWS access keys to this file or repository.
